@@ -1,0 +1,11 @@
+version: '3'
+services:
+  backup:
+    image: linuxserver/duplicati
+    volumes:
+      - "$STACK_ROOT:/source"
+      - "$DATA_LOCATION/config:/config"
+      - "$DATA_LOCATION/data:/app/db"
+    environment:
+      - "TZ=Europe/Copenhagen"
+    command: "echo This should only be used for running scripts"
